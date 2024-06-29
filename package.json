@@ -7,14 +7,24 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
+    "lint":"eslint .",
+    "format": "prettier . --write",
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/check": "^0.7.0",
     "@astrojs/mdx": "^3.1.2",
     "@astrojs/rss": "^4.0.7",
     "@astrojs/sitemap": "^3.1.6",
     "astro": "^4.11.3",
-    "@astrojs/check": "^0.7.0",
     "typescript": "^5.5.2"
+  },
+  "devDependencies": {
+    "@typescript-eslint/parser": "^7.14.1",
+    "eslint": "^9.6.0",
+    "eslint-plugin-astro": "^1.2.2",
+    "eslint-plugin-jsx-a11y": "^6.9.0",
+    "prettier": "3.3.2",
+    "prettier-plugin-astro": "^0.14.0"
   }
 }
