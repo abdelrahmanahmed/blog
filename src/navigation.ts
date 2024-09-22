@@ -22,7 +22,11 @@ export const footerData = {
   socialLinks: [
     { ariaLabel: 'Linkedin', icon: 'tabler:brand-linkedin', href: 'https://www.linkedin.com/in/wahdan/' },
     { ariaLabel: 'Blog', icon: 'tabler:article', href: 'https://dev.to/abdelrahmanahmed' },
-    { ariaLabel: 'stackoverflow', icon: 'tabler:brand-stackoverflow', href: 'https://stackoverflow.com/users/1846087/wahdan' },
+    {
+      ariaLabel: 'stackoverflow',
+      icon: 'tabler:brand-stackoverflow',
+      href: 'https://stackoverflow.com/users/1846087/wahdan',
+    },
     { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/abdelrahmanahmed' },
     { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
   ],

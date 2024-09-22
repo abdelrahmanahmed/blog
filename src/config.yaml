@@ -10,7 +10,7 @@ site:
 metadata:
   title:
     default: Abdelrahman Wahdan
-  description: "Abdelrahman Wahdan personal blog"
+  description: 'Abdelrahman Wahdan personal blog'
   robots:
     index: true
     follow: true
