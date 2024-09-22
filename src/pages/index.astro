@@ -1,23 +1,42 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import Layout from '~/layouts/PageLayout.astro';
+
+import Header from '~/components/widgets/Header.astro';
+import Hero from '~/components/widgets/Hero.astro';
+
+const metadata = {
+  title: 'Personal Homepage Demo',
+};
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
-  <body>
-    <Header />
-    <main>
-      <h1>🧑‍🚀 Hello, World!</h1>
-      <p>
-       welcome to my personal blog
-      </p>
-    </main>
-    <Footer />
-  </body>
-</html>
+<Layout metadata={metadata}>
+  <Fragment slot="announcement"></Fragment>
+  <Fragment slot="header">
+    <Header
+      links={[
+        { text: 'Home', href: '#' },
+        { text: 'Blog (coming soon)', href: '#' },
+      ]}
+      actions={[
+        {
+          text: 'Hire me',
+          href: 'https://www.linkedin.com/in/wahdan',
+          target:"_blank"
+        },
+      ]}
+      isSticky
+      showToggleTheme
+    />
+  </Fragment>
+
+  <!-- Hero2 Widget ******************* -->
+
+  <Hero
+    id="hero"
+    title="Abdelrahman Wahdan"
+  >
+    <Fragment slot="subtitle">
+    Software engineer with nine years of experience, interested in building scalable web apps and mission-critical systems using modern tools and agile methodologies, experienced in working with international teams and clients. I always go the extra mile and always challenge myself to learn and evolve.
+    </Fragment>
+  </Hero>
+</Layout>
