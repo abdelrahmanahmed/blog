@@ -98,36 +98,36 @@ export function ExperienceTimeline() {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, margin: '-100px' }}
-      className="space-y-6"
+      className="space-y-4 sm:space-y-6"
     >
       {experiences.map((exp, index) => (
         <motion.div key={index} variants={item}>
-          <div className="rounded-lg bg-white p-6 shadow-md transition-colors dark:bg-[#1f2937]">
-            <div className="mb-4 flex flex-col justify-between gap-2 md:flex-row md:items-center">
+          <div className="rounded-lg bg-white p-4 shadow-md transition-colors dark:bg-[#1f2937] sm:p-6">
+            <div className="mb-3 flex flex-col justify-between gap-2 sm:mb-4 sm:flex-row sm:items-center">
               <div>
-                <h3 className="text-xl font-bold text-blue-600 dark:text-blue-400">{exp.company}</h3>
-                <h4 className="text-lg font-semibold text-gray-900 dark:text-gray-200">{exp.position}</h4>
-                <div className="mt-1 flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
+                <h3 className="text-lg font-bold text-blue-600 dark:text-blue-400 sm:text-xl">{exp.company}</h3>
+                <h4 className="text-base font-semibold text-gray-900 dark:text-gray-200 sm:text-lg">{exp.position}</h4>
+                <div className="mt-1 flex flex-wrap items-center gap-2 text-xs text-gray-600 dark:text-gray-400 sm:text-sm">
                   <span className="flex items-center">
                     <i className="fas fa-map-marker-alt mr-1"></i>
                     {exp.location}
                   </span>
                   <span className="flex items-center">
-                    <i className="fas fa-industry ml-2 mr-1"></i>
+                    <i className="fas fa-industry ml-0 mr-1 sm:ml-2"></i>
                     {exp.industry}
                   </span>
                 </div>
               </div>
-              <span className="whitespace-nowrap rounded-md bg-blue-100 px-3 py-1 text-sm font-medium text-blue-600 transition-colors dark:bg-blue-500/20 dark:text-blue-400">
+              <span className="whitespace-nowrap rounded-md bg-blue-100 px-2 py-1 text-xs font-medium text-blue-600 transition-colors dark:bg-blue-500/20 dark:text-blue-400 sm:px-3 sm:text-sm">
                 {exp.period}
               </span>
             </div>
 
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-1.5 sm:gap-2">
               {exp.technologies.map((tech, i) => (
                 <span
                   key={i}
-                  className="rounded-md bg-gray-100 px-3 py-1 text-xs font-medium text-gray-700 transition-colors dark:bg-[#161b22] dark:text-gray-300"
+                  className="rounded-md bg-gray-100 px-2 py-0.5 text-xs font-medium text-gray-700 transition-colors dark:bg-[#161b22] dark:text-gray-300 sm:px-3 sm:py-1"
                 >
                   {tech}
                 </span>

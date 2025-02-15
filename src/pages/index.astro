@@ -5,30 +5,30 @@ import SocialLinks from '../components/SocialLinks.astro';
 ---
 
 <Layout title="Abdelrahman Wahdan - Software Engineer">
-  <div class="container mx-auto px-4 py-12">
+  <div class="container mx-auto px-4 py-6 sm:py-12">
     <div class="mx-auto max-w-4xl">
-      <div class="mb-12 overflow-hidden rounded-lg bg-gray-100 p-8 transition-colors dark:bg-[#161b22]">
+      <div class="mb-6 overflow-hidden rounded-lg bg-gray-100 p-4 transition-colors dark:bg-[#161b22] sm:mb-12 sm:p-8">
         <div class="relative">
-          <pre class="typing-effect mb-6 text-3xl font-bold"><code><span class="text-purple-600 dark:text-purple-400">const</span> <span class="text-yellow-600 dark:text-yellow-400">name</span> <span class="text-gray-900 dark:text-white">=</span> <span class="text-gray-900 dark:text-white">{</span>
+          <pre class="typing-effect mb-4 overflow-x-auto text-lg font-bold sm:mb-6 sm:text-3xl"><code><span class="text-purple-600 dark:text-purple-400">const</span> <span class="text-yellow-600 dark:text-yellow-400">name</span> <span class="text-gray-900 dark:text-white">=</span> <span class="text-gray-900 dark:text-white">{</span>
  <span class="text-green-600 dark:text-green-400">"Abdelrahman Wahdan"</span>
 <span class="text-gray-900 dark:text-white">}</span></code></pre>
 
-          <div class="space-y-6">
-            <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+          <div class="space-y-4 sm:space-y-6">
+            <p class="text-base leading-relaxed text-gray-700 dark:text-gray-300 sm:text-lg">
               <span class="text-green-600 dark:text-green-400"># </span>
               Software engineer with nine years of experience in building scalable web apps
             </p>
-            <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+            <p class="text-base leading-relaxed text-gray-700 dark:text-gray-300 sm:text-lg">
               <span class="text-green-600 dark:text-green-400"># </span>
               Experienced in working with international teams and clients
             </p>
 
-            <div class="flex flex-col items-center justify-between gap-6 pt-4 sm:flex-row">
+            <div class="flex flex-col items-center justify-between gap-4 pt-4 sm:flex-row sm:gap-6">
               <a
                 href="https://drive.google.com/file/d/1p4MVFa_SrUT8jGckmU9mZWI7nKRgaVP8/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="group inline-flex items-center rounded-md bg-blue-500 px-6 py-2 text-white transition-colors hover:bg-blue-600"
+                class="group w-full inline-flex items-center justify-center rounded-md bg-blue-500 px-4 py-2 text-sm text-white transition-colors hover:bg-blue-600 sm:w-auto sm:px-6 sm:text-base"
               >
                 <i class="fas fa-terminal mr-2"></i>
                 <span>View Resume</span>
@@ -41,8 +41,8 @@ import SocialLinks from '../components/SocialLinks.astro';
         </div>
       </div>
 
-      <div class="rounded-lg bg-gray-100 p-8 transition-colors dark:bg-[#161b22]">
-        <h2 class="mb-8 text-2xl font-bold text-blue-600 dark:text-blue-400">Experience</h2>
+      <div class="rounded-lg bg-gray-100 p-4 transition-colors dark:bg-[#161b22] sm:p-8">
+        <h2 class="mb-6 text-xl font-bold text-blue-600 dark:text-blue-400 sm:mb-8 sm:text-2xl">Experience</h2>
         <ExperienceTimeline client:load />
       </div>
     </div>
