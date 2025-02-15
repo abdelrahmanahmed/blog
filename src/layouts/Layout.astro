@@ -12,7 +12,7 @@ const { title, description = "Abdelrahman Wahdan's personal blog" } = Astro.prop
 ---
 
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
@@ -22,45 +22,56 @@ const { title, description = "Abdelrahman Wahdan's personal blog" } = Astro.prop
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap"
+    />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <ViewTransitions />
   </head>
-  <body
-    class="flex min-h-screen flex-col bg-gray-50 text-gray-900 transition-colors dark:bg-gray-900 dark:text-gray-100"
-  >
+  <body class="flex min-h-screen flex-col bg-white text-gray-900 transition-colors dark:bg-[#0d1117] dark:text-gray-300">
     <Header />
-    <main class="flex-grow pt-16">
+    <main class="relative flex-grow pt-16">
       <slot />
     </main>
     <Footer />
-    <script>
-      const updateTheme = () => {
-        const theme = localStorage.getItem('theme') ?? 'dark';
-        if (theme === 'dark') {
-          document.documentElement.classList.add('dark');
-        } else {
-          document.documentElement.classList.remove('dark');
-        }
-      };
-
-      // Update theme on page load
-      updateTheme();
-
-      // Update theme on view transitions
-      document.addEventListener('astro:after-swap', updateTheme);
-    </script>
-
-    <style is:global>
-      html {
-        font-family: system-ui, sans-serif;
-        scroll-behavior: smooth;
-      }
-
-      body {
-        margin: 0;
-        padding: 0;
-      }
-    </style>
   </body>
+
+  <script>
+    const updateTheme = () => {
+      const theme = localStorage.getItem('theme') ?? 'dark';
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    };
+
+    updateTheme();
+    document.addEventListener('astro:after-swap', updateTheme);
+  </script>
+
+  <style is:global>
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    html {
+      font-family: 'Fira Code', monospace;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .typing-effect {
+      overflow: hidden;
+      white-space: nowrap;
+      animation: typing 2s steps(40, end);
+    }
+  </style>
 </html>

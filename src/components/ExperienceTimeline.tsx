@@ -98,72 +98,41 @@ export function ExperienceTimeline() {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, margin: '-100px' }}
-      className="relative space-y-12"
+      className="space-y-6"
     >
       {experiences.map((exp, index) => (
-        <motion.div key={index} variants={item} className="relative">
-          {/* Timeline line */}
-          <div className="absolute bottom-0 left-0 top-0 w-px bg-gradient-to-b from-blue-600 via-blue-400 to-transparent" />
-
-          {/* Timeline dot */}
-          <div className="absolute left-[-4px] top-0">
-            <motion.div
-              animate={{
-                scale: [1, 1.2, 1],
-                opacity: [0.5, 1, 0.5],
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: 'easeInOut',
-              }}
-              className="h-2 w-2 rounded-full bg-blue-500"
-            />
-          </div>
-
-          {/* Content */}
-          <div className="ml-8">
-            <motion.div
-              whileHover={{ scale: 1.01 }}
-              className="rounded-xl border border-gray-100 bg-white p-6 shadow-lg dark:border-gray-700 dark:bg-gray-800"
-            >
-              {/* Header */}
-              <div className="mb-4 flex flex-col justify-between gap-2 md:flex-row md:items-center">
-                <div>
-                  <h3 className="text-xl font-bold text-blue-600 dark:text-blue-400">
-                    {exp.company}
-                  </h3>
-                  <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200">
-                    {exp.position}
-                  </h4>
-                  <div className="mt-1 flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
-                    <span className="flex items-center">
-                      <i className="fas fa-map-marker-alt mr-1"></i>
-                      {exp.location}
-                    </span>
-                    <span className="flex items-center">
-                      <i className="fas fa-industry ml-2 mr-1"></i>
-                      {exp.industry}
-                    </span>
-                  </div>
-                </div>
-                <span className="whitespace-nowrap rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-600 dark:bg-blue-900/30 dark:text-blue-400">
-                  {exp.period}
-                </span>
-              </div>
-
-              {/* Technologies */}
-              <div className="flex flex-wrap gap-2">
-                {exp.technologies.map((tech, i) => (
-                  <span
-                    key={i}
-                    className="cursor-default rounded-full border border-gray-200/50 bg-gradient-to-r from-gray-50 to-gray-100 px-3 py-1 text-xs font-medium text-gray-700 shadow-sm dark:border-gray-600/50 dark:from-gray-700/50 dark:to-gray-700 dark:text-gray-300"
-                  >
-                    {tech}
+        <motion.div key={index} variants={item}>
+          <div className="rounded-lg bg-white p-6 shadow-md transition-colors dark:bg-[#1f2937]">
+            <div className="mb-4 flex flex-col justify-between gap-2 md:flex-row md:items-center">
+              <div>
+                <h3 className="text-xl font-bold text-blue-600 dark:text-blue-400">{exp.company}</h3>
+                <h4 className="text-lg font-semibold text-gray-900 dark:text-gray-200">{exp.position}</h4>
+                <div className="mt-1 flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
+                  <span className="flex items-center">
+                    <i className="fas fa-map-marker-alt mr-1"></i>
+                    {exp.location}
                   </span>
-                ))}
+                  <span className="flex items-center">
+                    <i className="fas fa-industry ml-2 mr-1"></i>
+                    {exp.industry}
+                  </span>
+                </div>
               </div>
-            </motion.div>
+              <span className="whitespace-nowrap rounded-md bg-blue-100 px-3 py-1 text-sm font-medium text-blue-600 transition-colors dark:bg-blue-500/20 dark:text-blue-400">
+                {exp.period}
+              </span>
+            </div>
+
+            <div className="flex flex-wrap gap-2">
+              {exp.technologies.map((tech, i) => (
+                <span
+                  key={i}
+                  className="rounded-md bg-gray-100 px-3 py-1 text-xs font-medium text-gray-700 transition-colors dark:bg-[#161b22] dark:text-gray-300"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
           </div>
         </motion.div>
       ))}
