@@ -30,6 +30,7 @@ const { title, description = "Abdelrahman Wahdan's personal blog" } = Astro.prop
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <ViewTransitions />
+    <Analytics/>
   </head>
   <body class="flex min-h-screen flex-col bg-white text-gray-900 transition-colors dark:bg-[#0d1117] dark:text-gray-300">
     <Header />
@@ -75,5 +76,4 @@ const { title, description = "Abdelrahman Wahdan's personal blog" } = Astro.prop
       animation: typing 2s steps(40, end);
     }
   </style>
-  <Analytics/>
 </html>
