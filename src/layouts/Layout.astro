@@ -2,6 +2,7 @@
 import { ViewTransitions } from 'astro:transitions';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Analytics from '@vercel/analytics/astro'
 
 interface Props {
   title: string;
@@ -74,4 +75,5 @@ const { title, description = "Abdelrahman Wahdan's personal blog" } = Astro.prop
       animation: typing 2s steps(40, end);
     }
   </style>
+  <Analytics/>
 </html>

@@ -17,6 +17,7 @@
     "@astrojs/rss": "^4.0.5",
     "@astrojs/tailwind": "^5.1.0",
     "@astrojs/ts-plugin": "^1.5.3",
+    "@vercel/analytics": "^1.5.0",
     "astro": "^4.4.0",
     "framer-motion": "^11.0.5",
     "react": "^18.3.1",

@@ -31,6 +31,7 @@ const RAW_RUNTIME_STATE =
           ["@astrojs/rss", "npm:4.0.11"],\
           ["@astrojs/tailwind", "virtual:a0607159b112ae93f4d19831da3f91abc6357eb7ee3fc5c1e0f4fb34ac424d75bb6eea0557a064674917114f88adc374a75ffe3de422f7b6960ae4ef9c5b070e#npm:5.1.5"],\
           ["@astrojs/ts-plugin", "npm:1.10.4"],\
+          ["@vercel/analytics", "virtual:a0607159b112ae93f4d19831da3f91abc6357eb7ee3fc5c1e0f4fb34ac424d75bb6eea0557a064674917114f88adc374a75ffe3de422f7b6960ae4ef9c5b070e#npm:1.5.0"],\
           ["astro", "npm:4.16.18"],\
           ["framer-motion", "virtual:a0607159b112ae93f4d19831da3f91abc6357eb7ee3fc5c1e0f4fb34ac424d75bb6eea0557a064674917114f88adc374a75ffe3de422f7b6960ae4ef9c5b070e#npm:11.18.2"],\
           ["prettier", "npm:3.5.1"],\
@@ -1502,6 +1503,52 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../Users/abdel/AppData/Local/Yarn/Berry/cache/@ungap-structured-clone-npm-1.3.0-aea1bdf957-10c0.zip/node_modules/@ungap/structured-clone/",\
         "packageDependencies": [\
           ["@ungap/structured-clone", "npm:1.3.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@vercel/analytics", [\
+      ["npm:1.5.0", {\
+        "packageLocation": "../../Users/abdel/AppData/Local/Yarn/Berry/cache/@vercel-analytics-npm-1.5.0-638aefa6a6-10c0.zip/node_modules/@vercel/analytics/",\
+        "packageDependencies": [\
+          ["@vercel/analytics", "npm:1.5.0"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:a0607159b112ae93f4d19831da3f91abc6357eb7ee3fc5c1e0f4fb34ac424d75bb6eea0557a064674917114f88adc374a75ffe3de422f7b6960ae4ef9c5b070e#npm:1.5.0", {\
+        "packageLocation": "./.yarn/__virtual__/@vercel-analytics-virtual-aa70bf32cb/3/Users/abdel/AppData/Local/Yarn/Berry/cache/@vercel-analytics-npm-1.5.0-638aefa6a6-10c0.zip/node_modules/@vercel/analytics/",\
+        "packageDependencies": [\
+          ["@vercel/analytics", "virtual:a0607159b112ae93f4d19831da3f91abc6357eb7ee3fc5c1e0f4fb34ac424d75bb6eea0557a064674917114f88adc374a75ffe3de422f7b6960ae4ef9c5b070e#npm:1.5.0"],\
+          ["@remix-run/react", null],\
+          ["@sveltejs/kit", null],\
+          ["@types/next", null],\
+          ["@types/react", null],\
+          ["@types/remix-run__react", null],\
+          ["@types/svelte", null],\
+          ["@types/sveltejs__kit", null],\
+          ["@types/vue", null],\
+          ["@types/vue-router", null],\
+          ["next", null],\
+          ["react", "npm:18.3.1"],\
+          ["svelte", null],\
+          ["vue", null],\
+          ["vue-router", null]\
+        ],\
+        "packagePeers": [\
+          "@remix-run/react",\
+          "@sveltejs/kit",\
+          "@types/next",\
+          "@types/react",\
+          "@types/remix-run__react",\
+          "@types/svelte",\
+          "@types/sveltejs__kit",\
+          "@types/vue-router",\
+          "@types/vue",\
+          "next",\
+          "react",\
+          "svelte",\
+          "vue-router",\
+          "vue"\
         ],\
         "linkType": "HARD"\
       }]\
@@ -5958,6 +6005,7 @@ const RAW_RUNTIME_STATE =
           ["@astrojs/rss", "npm:4.0.11"],\
           ["@astrojs/tailwind", "virtual:a0607159b112ae93f4d19831da3f91abc6357eb7ee3fc5c1e0f4fb34ac424d75bb6eea0557a064674917114f88adc374a75ffe3de422f7b6960ae4ef9c5b070e#npm:5.1.5"],\
           ["@astrojs/ts-plugin", "npm:1.10.4"],\
+          ["@vercel/analytics", "virtual:a0607159b112ae93f4d19831da3f91abc6357eb7ee3fc5c1e0f4fb34ac424d75bb6eea0557a064674917114f88adc374a75ffe3de422f7b6960ae4ef9c5b070e#npm:1.5.0"],\
           ["astro", "npm:4.16.18"],\
           ["framer-motion", "virtual:a0607159b112ae93f4d19831da3f91abc6357eb7ee3fc5c1e0f4fb34ac424d75bb6eea0557a064674917114f88adc374a75ffe3de422f7b6960ae4ef9c5b070e#npm:11.18.2"],\
           ["prettier", "npm:3.5.1"],\
