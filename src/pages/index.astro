@@ -1,41 +1,81 @@
 ---
-import Layout from '~/layouts/PageLayout.astro';
-
-import Header from '~/components/widgets/Header.astro';
-import Hero from '~/components/widgets/Hero.astro';
-
-const metadata = {
-  title: 'Abdelrahman Wahdan',
-};
+import Layout from '../layouts/Layout.astro';
+import { ExperienceTimeline } from '../components/ExperienceTimeline';
+import SocialLinks from '../components/SocialLinks.astro';
 ---
 
-<Layout metadata={metadata}>
-  <Fragment slot="announcement"></Fragment>
-  <Fragment slot="header">
-    <Header
-      links={[
-        { text: 'Home', href: '#' },
-        { text: 'Blog', href: 'https://dev.to/abdelrahmanahmed' },
-      ]}
-      actions={[
-        {
-          text: 'Hire me',
-          href: 'https://www.linkedin.com/in/wahdan',
-          target: '_blank',
-        },
-      ]}
-      isSticky
-      showToggleTheme
-    />
-  </Fragment>
+<Layout title="Abdelrahman Wahdan - Software Engineer">
+  <div class="container mx-auto px-4 py-12">
+    <div class="mx-auto max-w-4xl">
+      <div
+        class="relative mb-12 animate-fade-in overflow-hidden rounded-2xl border border-blue-100/20 bg-gradient-to-br from-blue-600/10 via-white/50 to-blue-400/10 p-8 shadow-xl backdrop-blur-sm dark:border-blue-800/20 dark:from-blue-900/20 dark:via-gray-800 dark:to-blue-800/20"
+      >
+        {/* Decorative elements */}
+        <div class="absolute left-0 top-0 h-full w-full">
+          <div
+            class="absolute left-0 top-0 h-32 w-32 -translate-x-1/2 -translate-y-1/2 transform rounded-full bg-blue-400/10 blur-3xl dark:bg-blue-500/10"
+          >
+          </div>
+          <div
+            class="absolute bottom-0 right-0 h-32 w-32 translate-x-1/2 translate-y-1/2 transform rounded-full bg-blue-400/10 blur-3xl dark:bg-blue-500/10"
+          >
+          </div>
+        </div>
 
-  <!-- Hero2 Widget ******************* -->
+        {/* Content */}
+        <div class="relative">
+          <h1
+            class="mb-6 bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-4xl font-bold text-transparent dark:from-blue-400 dark:to-blue-300 md:text-5xl"
+          >
+            Abdelrahman Wahdan
+          </h1>
 
-  <Hero id="hero" title="Abdelrahman Wahdan">
-    <Fragment slot="subtitle">
-      Software engineer with nine years of experience, interested in building scalable web apps and mission-critical
-      systems using modern tools and agile methodologies, experienced in working with international teams and clients. I
-      always go the extra mile and always challenge myself to learn and evolve.
-    </Fragment>
-  </Hero>
+          <div class="space-y-6">
+            <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300 md:text-xl">
+              Software engineer with nine years of experience, interested in building scalable web
+              apps and mission-critical systems using modern tools and agile methodologies.
+            </p>
+            <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300 md:text-xl">
+              Experienced in working with international teams and clients. I always go the extra
+              mile and challenge myself to learn and evolve.
+            </p>
+
+            <div class="flex flex-col items-center justify-between gap-6 pt-4 sm:flex-row">
+              <a
+                href="https://drive.google.com/file/d/1p4MVFa_SrUT8jGckmU9mZWI7nKRgaVP8/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group relative inline-flex w-full items-center justify-center overflow-hidden rounded-full p-[2px] hover:cursor-pointer sm:w-auto"
+              >
+                <div
+                  class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]"
+                >
+                </div>
+                <div
+                  class="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-gray-950 px-8 py-3 text-sm font-medium text-white backdrop-blur-3xl hover:bg-gray-900/80 dark:bg-gray-900 dark:hover:bg-gray-900/80"
+                >
+                  <span class="relative flex items-center space-x-3">
+                    <i class="fas fa-paper-plane text-blue-400"></i>
+                    <span>Hire Me</span>
+                  </span>
+                </div>
+              </a>
+              <div class="flex w-full justify-center sm:w-auto">
+                <SocialLinks />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="rounded-2xl bg-white/50 p-8 shadow-xl backdrop-blur-sm dark:bg-gray-800/50">
+        <h2
+          class="mb-12 bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-center text-3xl font-bold text-transparent dark:from-blue-400 dark:to-blue-500"
+        >
+          Professional Experience
+        </h2>
+        <ExperienceTimeline client:load />
+      </div>
+    </div>
+  </div>
 </Layout>

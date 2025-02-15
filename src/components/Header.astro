@@ -1,0 +1,43 @@
+---
+import ThemeToggle from './ThemeToggle';
+---
+
+<header
+  class="fixed z-50 w-full animate-fade-in border-b border-gray-200 bg-white/80 backdrop-blur-lg dark:border-gray-800 dark:bg-gray-900/80"
+>
+  <div class="container mx-auto px-4">
+    <div class="relative flex h-16 items-center justify-center">
+      <nav class="flex items-center space-x-8">
+        <a
+          href="/"
+          class="font-medium text-gray-900 transition-colors hover:text-blue-600 dark:text-gray-100 dark:hover:text-blue-400"
+          aria-label="Home"
+        >
+          <i class="fas fa-home text-lg"></i>
+        </a>
+        <a
+          href="https://dev.to/abdelrahmanahmed"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center space-x-2 font-medium text-gray-900 transition-colors hover:text-blue-600 dark:text-gray-100 dark:hover:text-blue-400"
+        >
+          <span>Blog</span>
+          <i class="fas fa-external-link-alt text-sm"></i>
+        </a>
+      </nav>
+
+      <div class="absolute right-0 flex items-center">
+        <a
+          href="/rss.xml"
+          class="mr-4 text-gray-600 transition-colors hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="RSS Feed"
+        >
+          <i class="fas fa-rss text-lg"></i>
+        </a>
+        <ThemeToggle client:load />
+      </div>
+    </div>
+  </div>
+</header>

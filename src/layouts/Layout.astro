@@ -1,48 +1,66 @@
 ---
-import '~/assets/styles/tailwind.css';
-
-import { I18N } from 'astrowind:config';
-
-import CommonMeta from '~/components/common/CommonMeta.astro';
-import Favicons from '~/components/Favicons.astro';
-import CustomStyles from '~/components/CustomStyles.astro';
-import ApplyColorMode from '~/components/common/ApplyColorMode.astro';
-import Metadata from '~/components/common/Metadata.astro';
-import SiteVerification from '~/components/common/SiteVerification.astro';
-import Analytics from '~/components/common/Analytics.astro';
-import BasicScripts from '~/components/common/BasicScripts.astro';
-
-// Comment the line below to disable View Transitions
 import { ViewTransitions } from 'astro:transitions';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 
-import type { MetaData as MetaDataType } from '~/types';
-
-export interface Props {
-  metadata?: MetaDataType;
+interface Props {
+  title: string;
+  description?: string;
 }
 
-const { metadata = {} } = Astro.props;
-const { language, textDirection } = I18N;
+const { title, description = "Abdelrahman Wahdan's personal blog" } = Astro.props;
 ---
 
 <!doctype html>
-<html lang={language} dir={textDirection} class="2xl:text-[20px]">
+<html lang="en" class="dark">
   <head>
-    <CommonMeta />
-    <Favicons />
-    <CustomStyles />
-    <ApplyColorMode />
-    <Metadata {...metadata} />
-    <SiteVerification />
-    <Analytics />
-
-    <!-- Comment the line below to disable View Transitions -->
-    <ViewTransitions fallback="swap" />
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <ViewTransitions />
   </head>
+  <body
+    class="flex min-h-screen flex-col bg-gray-50 text-gray-900 transition-colors dark:bg-gray-900 dark:text-gray-100"
+  >
+    <Header />
+    <main class="flex-grow pt-16">
+      <slot />
+    </main>
+    <Footer />
+    <script>
+      const updateTheme = () => {
+        const theme = localStorage.getItem('theme') ?? 'dark';
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      };
 
-  <body class="antialiased text-default bg-page tracking-tight">
-    <slot />
+      // Update theme on page load
+      updateTheme();
 
-    <BasicScripts />
+      // Update theme on view transitions
+      document.addEventListener('astro:after-swap', updateTheme);
+    </script>
+
+    <style is:global>
+      html {
+        font-family: system-ui, sans-serif;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
   </body>
 </html>
