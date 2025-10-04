@@ -135,7 +135,7 @@ export function ExperienceTimeline() {
               </div>
 
               {exp.positions ? (
-                <div className="mt-3 space-y-4">
+                <div className="mt-3 space-y-6">
                   {exp.positions.map((pos, i) => (
                     <div key={i} className="relative pl-6">
                       <div className="absolute left-0 top-2 flex h-4 w-4 items-center justify-center">
