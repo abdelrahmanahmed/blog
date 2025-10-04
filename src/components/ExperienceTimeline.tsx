@@ -132,11 +132,6 @@ export function ExperienceTimeline() {
                     </span>
                   </div>
                 </div>
-                {exp.period && (
-                  <span className="whitespace-nowrap rounded-md bg-blue-100 px-2 py-1 text-xs font-medium text-blue-600 transition-colors dark:bg-blue-500/20 dark:text-blue-400 sm:px-3 sm:text-sm">
-                    {exp.period}
-                  </span>
-                )}
               </div>
 
               {exp.positions ? (
